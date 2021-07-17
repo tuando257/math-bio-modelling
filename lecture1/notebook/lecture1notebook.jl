@@ -137,6 +137,24 @@ array.^2
 # ╔═╡ 232fb90c-2086-449a-af9b-365a777850ba
 f.(array)
 
+# ╔═╡ 4e8ff94a-ced7-43b6-b3a0-990a7caa4662
+md"""
+# For loops
+
+Sử dụng `for` để lặp qua các giá trị đã định sẵn:
+"""
+
+# ╔═╡ 82f0332a-0e75-4e3c-bc6d-b50671b548b9
+begin	
+	s = 0
+	
+	for i in 1:10
+		s += i    # Equivalent to s = s + i
+	end
+	
+	s
+end
+
 # ╔═╡ f5d8d9b5-85f6-42fe-8d4b-ee9a5d6ad9e4
 md"""
 # Ví dụ
@@ -156,10 +174,23 @@ md"""
 ## Kết quả
 """
 
+# ╔═╡ 24b960c3-e857-4c7f-9231-e8d7428cd838
+# Nghiệm số học
+begin
+	num_pns = []
+	num_pn = p0
+	for i = 1:n
+		num_pn = round(Int,(1+r)*num_pn)
+		push!(num_pns, num_pn)
+	end
+end
+
 # ╔═╡ 2563c408-be97-4039-9539-fdc618308eac
+# Nghiệm chính xác
 pn = round(Int, (1+r)^n*p0);
 
 # ╔═╡ b65e7599-cd38-4a62-b503-6abee75556f4
+# Biểu đồ
 begin
 	year = 1:n
 	pns = round.(Int, (1+r).^year.*p0)
@@ -171,7 +202,7 @@ md"""
 """
 
 # ╔═╡ bab3b48d-01c7-48b3-af55-13ab45dfde14
-pns
+num_pns
 
 # ╔═╡ 2e716866-2f28-4b62-bedd-e73f57e5681e
 begin
@@ -223,12 +254,15 @@ end
 # ╠═f69be04d-66fc-46c6-8b3c-9143510a5df5
 # ╠═68260414-fb06-420a-a790-bc88ba980d9f
 # ╠═232fb90c-2086-449a-af9b-365a777850ba
+# ╟─4e8ff94a-ced7-43b6-b3a0-990a7caa4662
+# ╠═82f0332a-0e75-4e3c-bc6d-b50671b548b9
 # ╟─f5d8d9b5-85f6-42fe-8d4b-ee9a5d6ad9e4
-# ╟─d217f54c-11d0-4c6c-8ac2-3421bfbb5330
+# ╠═d217f54c-11d0-4c6c-8ac2-3421bfbb5330
 # ╟─26476884-2d75-423b-ab3d-106689ed2e5f
+# ╠═24b960c3-e857-4c7f-9231-e8d7428cd838
 # ╠═2563c408-be97-4039-9539-fdc618308eac
 # ╠═b65e7599-cd38-4a62-b503-6abee75556f4
 # ╟─87eb637d-534a-417a-9b7a-f4e9c8a15fc2
 # ╟─bab3b48d-01c7-48b3-af55-13ab45dfde14
 # ╟─2e716866-2f28-4b62-bedd-e73f57e5681e
-# ╟─2b8ce708-768a-4726-ba60-02a9051f143c
+# ╠═2b8ce708-768a-4726-ba60-02a9051f143c
