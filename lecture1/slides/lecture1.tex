@@ -149,11 +149,8 @@
     Các dạng mô hình hóa trong Toán sinh học cũng tương tự như slide trước. Tuy nhiên, trong phạm vi
     phần đầu khóa học này chúng ta tập trung vào \textbf{\textit{phương trình sai phân}} - một \textbf{\textit{discrete dynamical system}} vì các lý do sau:
     \begin{enumerate}
-        \item Modeling with difference equations is a very powerful, yet
-              simple tool for modeling dynamical systems in biology, ecology,
-              the environment, and chemistry
-        \item Modeling with difference equations requires knowledge of
-              algebra but does not require knowledge of differential calculus
+        \item Mô hình hóa với các phương trình sai phân là một công cụ rất mạnh mẽ nhưng đơn giản để mô hình hóa các hệ thống động lực học trong sinh học, sinh thái học, dịch tễ ...
+        \item Mô hình hóa với các phương trình sai phân yêu cầu kiến thức về đại số nhưng chưa yêu cầu các kiến thức về giải tích
         \item Đối tượng khóa học tập trung vào các bạn học sinh cấp 3 và năm nhất, năm hai đại học,
               chưa có kiến thức nhiều về các nhánh của toán học như Phương trinh vi phân, phương trình đạo hàm riêng, ...
     \end{enumerate}
@@ -161,22 +158,16 @@
 
 \begin{frame}{Mô hình hóa toán học và Toán sinh học}
     \begin{vidu}
-        Consider the population of a city with a constant growth rate per year. The
-        population is counted at the end of each year. For simplicity, assume that
-        there is no immigration to or emigration from the city.\\
-        i. Model the population dynamic and predict the long-term behavior
-        of the system.\\
-        ii. In 2020, the city’s population was 100,000. The natural annual
-        growth rate of the population is 1\% per year. Predict the city’s
-        population in 2030. Estimate the population over the next 30 years
-        and graph it. What is the long-term behavior of the population?
+        Xem xét vấn đề dân số với tốc độ tăng trường dân số (r) tại 1 thành phố; cứ mỗi năm dân số của thành phố đó được tính vào cuối năm.\\
+        1. Mô hình hóa quá trình tăng trưởng dân số (population dynamic) của thành phố đó và dự đoán dân số trong những năm tiếp theo.\\
+        2. Năm 2020, dân số là 100,000 người. Tốc độ tăng trưởng dân số hàng năm là 1\%/năm. Hãy dự đoán dân số vào năm 2030? Ước tính dân số trong vòng 30 năm tiếp theo?
     \end{vidu}
 \end{frame}
 
 \begin{frame}{Mô hình hóa toán học và Toán sinh học}
-    \textbf{Bàn Luận} \\
-    i. We will measure the population at discrete time intervals in
-    one-year units. Đặt: \\
+    \textbf{1. Mô hình hóa tăng trưởng dân số của thành phố} \\
+    Chúng tôi sẽ đo dân số trong các khoảng thời gian riêng biệt trong
+    đơn vị một năm. Đặt: \\
     \quad $p_n$ là dân số tại thời điểm kết thúc năm thứ $n$ \\
     \quad $p_0$ là dân số ban đầu \\
     \quad $r$ là tốc độ gia tăng dân số \\
@@ -193,11 +184,8 @@
 \end{frame}
 
 \begin{frame}{Mô hình hóa toán học và Toán sinh học}
-    \textbf{Bàn Luận (tiếp):} \\
-    Để giải hệ trên, giả sử để tìm $p_k$ ta có thể thay $p_0$ vào phương trình \ref{eq:1} để tìm $p_1$, rồi tìm $p_2$,
-    lần lượt đến $p_k$. Bằng phương pháp trên, với mọi $k$ ta luôn tìm được một dãy số: \\
-    \quad $p_0, p_1, p_2, ..., p_k$\\
-    là nghiệm của phương trình \ref{eq:1}. Đây được gọi là \textbf{\textit{nghiệm số học (numerical solution)}} của phương trình mô hình hóa.\\
+    \textbf{1. Mô hình hóa tăng trưởng dân số của thành phố (tiếp):} \\
+    Để giải hệ trên, giả sử dân số ban đầu, $p_0$ = 3, với tốc độ tăng dân số r = 1, lúc này mô hình sẽ là $p_{n+1}$ = 2$p_n$, và do đó $p_1$ = 2$p_0$ = 2*3 = 6, $p_2$ = 2$p_1$ = 2*6 = 12, v.v. Đây được gọi là \textbf{\textit{nghiệm số học (numerical solution)}} của phương trình mô hình hóa.\\
     Ta cũng có thể dễ dàng chứng minh được từ phương trình \ref{eq:1}
     \begin{align}
         \label{eq:2}
@@ -209,8 +197,9 @@
 \end{frame}
 
 \begin{frame}{Mô hình hóa toán học và Toán sinh học}
-    \textbf{Bàn Luận (tiếp):} \\
-    ii. Ta có $n=10, p_0 = 100000, r=0.01$. Tại năm thứ $10$, dân số của thành phố là:
+    \textbf{2. Dân số của thành phố đó trong vòng 30 năm tiếp?} \\
+    Dân số trong 10 năm tiếp theo:
+    ($n=10, p_0 = 100000, r=0.01$)\\ Tại năm thứ $10$, dân số của thành phố là:
     $$p_{10}=(1+0.01)^{10}100000=110462$$
     Để vẽ đồ thị, ta tính dãy số $p_0, p_1, p_2,...,p_{30}$ theo phương trình \ref{eq:2}. Kết quả như sau:
     \begin{center}
@@ -277,6 +266,12 @@
         \item Ứng dụng mô hình hóa toán học vào sinh học
         \item Sử dụng các công cụ toán học và tin học trong mô hình hóa toán học
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Syllabus}
+    \begin{center}
+    \includegraphics[scale = 0.32]{figs/syllabus.png}
+    \end{center}
 \end{frame}
 
 %===============
